@@ -12,9 +12,9 @@ app.config['UPLOAD_FOLDER'] = 'static/uploads'
 posts = []
 
 # Rota principal que exibe a página inicial com a lista de posts
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('index.html', posts=posts)
+    return render_template('index.html')
 
 # Rota para criar um novo post, aceita métodos GET e POST
 @app.route('/new_post', methods=['GET', 'POST'])
@@ -46,11 +46,14 @@ def new_post():
         # Adiciona o post à lista de posts
         posts.append(post)
         # Redireciona para a página inicial após o envio do post
-        return redirect(url_for('index'))
+        return redirect(url_for('viagens'))
 
     # Se o método for GET, renderiza a página de criação de novo post
     return render_template('new_post.html')
 
+@app.route('/viagens', methods=['GET', 'POST'])
+def viagens():
+    return render_template('viagens.html',posts=posts)
 # Executa a aplicação Flask no modo debug
 if __name__ == '__main__':
     app.run(debug=True)
