@@ -12,7 +12,7 @@
 
 ### Table of contents
 
-- [About the Proyect](#about-the-proyect)
+- [About the Proyect](#about-the-project)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Roadmap](#roadmap)
